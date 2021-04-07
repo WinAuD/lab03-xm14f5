@@ -4,33 +4,24 @@ import AddButton from './AddButton.js';
 
 class Number extends Component { 
   
-  state = { count: 0 }; // Key-Value-Paar
+  state = { count: 2 }; // Key-Value-Paar
 
   // incCounter() {
  //    this.setState((state, props) => ({  
  //       counter: state.counter + parseInt(this.props.myInc)}));
  // }
 
-  jump = (e) => {
-    e.preventDefault();
-    this.setState( { count: this.state + 1 } );
+  add = (e) => {
+    this.setState( { count: this.state.count + parseInt(this.props.myInc)});
   }
 
   render() {
   
     return (
       <div className="CounterNum">
-        Count: {this.state.counter}
+        Count: {this.state.count}
         <AddButton myInc = {3} myCallback = {this.add}></AddButton>
-      </div>
-
-
-      <div className="CounterNum Counter">
-        Count: {this.state.counter}
-        <button className="myButton CounterNum" onClick={ () => this.incCounter() } >
-          {this.props.myInc}
-        </button>
-      </div>
+      </div> 
     );
   } 
 }

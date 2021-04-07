@@ -17,7 +17,6 @@ class IncCounter extends Component {
   render() {
   
     return (
-
       <div className="CounterNum Counter">
         Count: {this.state.counter}
         <button className="myButton CounterNum" onClick={ () => this.incCounter() } >
