@@ -3,25 +3,25 @@ import './IncCounter.css';
 
 class IncCounter extends Component { 
   
-  state = { count: 0 };
- 
-  jump()  {
-      this.setState({ count: this.state.count + this.props.myInc });
-
-      this.setState((state, props) => ({  
-        counter: state.counter + props.inc}));
-
+  constructor(props) {
+    super(props);
+    this.state = { counter: 0 }; // Key-Value-Paar
+    this.incCounter = this.incCounter.bind(this);
   }
- 
-  render() {
-    
 
+  incCounter() {
+     this.setState((state, props) => ({  
+        counter: state.counter + parseInt(this.props.myInc)}));
+  }
+
+  render() {
+  
     return (
 
       <div className="CounterNum Counter">
-        Count: {this.state.count}
-        <button className="myButton CounterNum" onClick={ () => this.jump() } >
-          +
+        Count: {this.state.counter}
+        <button className="myButton CounterNum" onClick={ () => this.incCounter() } >
+          {this.props.myInc}
         </button>
       </div>
     );
