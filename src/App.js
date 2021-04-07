@@ -5,7 +5,7 @@ import IncCounter from './IncCounter.js';
 class App extends Component { 
   render() { 
     return (
-      <div><IncCounter/></div> 
+      <div><IncCounter myInc="3"/></div> 
     ); 
   }
 }

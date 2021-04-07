@@ -2,18 +2,26 @@ import React, { Component } from"react";
 import './IncCounter.css';
 
 class IncCounter extends Component { 
+  
   state = { count: 0 };
  
   jump()  {
-      this.setState({ count: this.state.count + 1 });
+      this.setState({ count: this.state.count + this.props.myInc });
+
+      this.setState((state, props) => ({  
+        counter: state.counter + props.inc}));
+
   }
  
   render() {
+    
+
     return (
-      <div className="CounterNum Counter myButton">
+
+      <div className="CounterNum Counter">
         Count: {this.state.count}
-        <button className="CounterNum" onClick={ () => this.jump() } >
-          OK
+        <button className="myButton CounterNum" onClick={ () => this.jump() } >
+          +
         </button>
       </div>
     );
