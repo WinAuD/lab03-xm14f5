@@ -4,10 +4,10 @@ import './Number.css';
 
 class Number extends Component {
   
-  state = { count: 0 }; // Key-Value-Paar
+  state = { count: 0 }; // Key-Valu
 
-  add = (i) => { // F. 99
-    this.setState({ count: this.state.count + i});
+  add = (i) => { // F. 99, mit Updater-Funktion (Aufgabe 6)
+    this.setState((state) => ({ count: this.state.count + i}));
   }
 
   // add = (i) => { // F. 99, ohne Updater-Funktion (Aufgabe 5)
@@ -29,6 +29,7 @@ class Number extends Component {
         <AddButton myInc = {this.props.myInc2} myCallback = {(i) => this.add(parseInt(this.props.myInc2))}></AddButton>
         <AddButton myInc = {this.props.myInc3} myCallback = {(i) => this.add(parseInt(this.props.myInc3))}></AddButton>
         <AddButton myInc = {this.props.myInc4} myCallback = {(i) => this.add(parseInt(this.props.myInc4))}></AddButton>
+        {hour}h {minute}min {second}sec
       </div> 
     );
   } 
