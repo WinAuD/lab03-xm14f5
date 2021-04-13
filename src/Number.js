@@ -1,13 +1,13 @@
 import React, { Component } from"react";
 import AddButton from './AddButton.js';
 import './Number.css';
-
+ 
 class Number extends Component {
   
-  state = { count: 0 }; // Key-Valu
+  state = { count: 0 }; // Key-Value-Paar
 
-  add = (i) => { // F. 99, mit Updater-Funktion (Aufgabe 6)
-    this.setState((state) => ({ count: this.state.count + i}));
+  add = (i) => { // F. 99, mit Updater-Funktion F.87 (Aufgabe 6)
+    this.setState((state) => ({ count: state.count + i}));
   }
 
   // add = (i) => { // F. 99, ohne Updater-Funktion (Aufgabe 5)
