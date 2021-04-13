@@ -1,6 +1,6 @@
 import React, { Component } from"react";
 import './IncCounter.css';
-
+ 
 class IncCounter extends Component { 
   
   constructor(props) {
